@@ -1,4 +1,5 @@
 from tkinter import *
+from PIL import ImageTk, Image
 
 
 def home_ui():
@@ -12,9 +13,43 @@ def home_ui():
     bottom = Frame(root)
     bottom.pack(side="top")
 
+    # Frames
+    frame1 = Frame(root, width=50, height=50)
+    frame1.pack()
+    frame1.place(anchor='sw', relx=0.05, rely=0.2)
+
+    frame2 = Frame(root, width=50, height=50)
+    frame2.pack()
+    frame2.place(anchor='sw', relx=0.05, rely=0.4)
+
+    frame3 = Frame(root, width=50, height=50)
+    frame3.pack()
+    frame3.place(anchor='sw', relx=0.05, rely=0.6)
+
+    frame4 = Frame(root, width=50, height=50)
+    frame4.pack()
+    frame4.place(anchor='sw', relx=0.05, rely=0.8)
+
+    # Title
     label = Label(top, font=("Helvetica", "18", "bold italic"), text="---------- HOSGELDINIZ ----------", fg="#DF01A5",
                   anchor="center")
     label.grid(row=0, column=1)
+
+    img1 = ImageTk.PhotoImage(Image.open("tomatoe.jpg"))
+    label1 = Label(frame1, image=img1)
+    label1.pack()
+
+    img2 = ImageTk.PhotoImage(Image.open("tomatoe.jpg"))
+    label2 = Label(frame2, image=img2)
+    label2.pack()
+
+    img3 = ImageTk.PhotoImage(Image.open("tomatoe.jpg"))
+    label3 = Label(frame3, image=img3)
+    label3.pack()
+
+    img4 = ImageTk.PhotoImage(Image.open("tomatoe.jpg"))
+    label4 = Label(frame4, image=img4)
+    label4.pack()
 
     # Buttons
     # Show person
