@@ -6,6 +6,8 @@ def home_ui():
     root = Tk()
     root.title("RUDIYET PROGRAMI")
     root.geometry("1280x1080")
+    root.resizable()
+    # root.configure(bg="white")
 
     top = Frame(root)
     top.pack(side="top")
@@ -22,13 +24,13 @@ def home_ui():
     frame2.pack()
     frame2.place(anchor='sw', relx=0.05, rely=0.4)
 
-    frame3 = Frame(root, width=50, height=50)
+    frame3 = Frame(root, width=10, height=10)
     frame3.pack()
     frame3.place(anchor='sw', relx=0.05, rely=0.6)
-
-    frame4 = Frame(root, width=50, height=50)
-    frame4.pack()
-    frame4.place(anchor='sw', relx=0.05, rely=0.8)
+    #
+    # frame4 = Frame(root, width=50, height=50)
+    # frame4.pack()
+    # frame4.place(anchor='sw', relx=0.05, rely=0.8)
 
     # Title
     label = Label(top, font=("Helvetica", "18", "bold italic"), text="---------- HOSGELDINIZ ----------", fg="#DF01A5",
@@ -39,17 +41,17 @@ def home_ui():
     label1 = Label(frame1, image=img1)
     label1.pack()
 
-    img2 = ImageTk.PhotoImage(Image.open("tomatoe.jpg"))
+    img2 = ImageTk.PhotoImage(Image.open("meal2.png"))
     label2 = Label(frame2, image=img2)
     label2.pack()
 
-    img3 = ImageTk.PhotoImage(Image.open("tomatoe.jpg"))
+    img3 = ImageTk.PhotoImage(Image.open("meal1.png"))
     label3 = Label(frame3, image=img3)
     label3.pack()
-
-    img4 = ImageTk.PhotoImage(Image.open("tomatoe.jpg"))
-    label4 = Label(frame4, image=img4)
-    label4.pack()
+    #
+    # img4 = ImageTk.PhotoImage(Image.open("tomatoe.jpg"))
+    # label4 = Label(frame4, image=img4)
+    # label4.pack()
 
     # Buttons
     # Show person
