@@ -49,6 +49,7 @@ def home_ui():
                   anchor="center")
     label.grid(row=0, column=1)
 
+    # Showing the frames and attaching images to them
     img1 = ImageTk.PhotoImage(Image.open("meal3.png"))
     label1 = Label(frame1, image=img1)
     label1.pack()
@@ -61,7 +62,7 @@ def home_ui():
     label3 = Label(frame3, image=img3)
     label3.pack()
 
-    img4 = ImageTk.PhotoImage(Image.open("tomatoe.png"))
+    img4 = ImageTk.PhotoImage(Image.open("tomato.png"))
     label4 = Label(frame4, image=img4)
     label4.pack()
 
@@ -84,49 +85,49 @@ def home_ui():
                           height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
     show_persons.grid(row=0, column=2, padx=10, pady=10)
 
-    # select person
+    # Select person
     select_person = Button(bottom, text="Kişi Seç", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                            relief=RIDGE,
                            height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
     select_person.grid(row=1, column=2, padx=10, pady=10)
 
-    # add person
+    # Add person
     add_person = Button(bottom, text="Kişi Ekle", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                         relief=RIDGE,
                         height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
     add_person.grid(row=2, column=2, padx=10, pady=10)
 
-    # edit person
+    # Edit person
     edit_person = Button(bottom, text="Kişi Düzenle", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                          relief=RIDGE,
                          height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
     edit_person.grid(row=3, column=2, padx=10, pady=10)
 
-    # delete person
+    # Delete person
     delete_person = Button(bottom, text="Kişi Sil", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                            relief=RIDGE,
                            height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
     delete_person.grid(row=4, column=2, padx=10, pady=10)
 
-    # enter meal
+    # Enter meal
     enter_meal = Button(bottom, text="Öğün Girişi Yap", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                         relief=RIDGE,
                         height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
     enter_meal.grid(row=5, column=2, padx=10, pady=10)
 
-    # enter cal burnt
+    # Enter cal burnt
     cal_burned = Button(bottom, text="Yakılan Kalori Girişi Yap", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                         relief=RIDGE,
                         height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
     cal_burned.grid(row=6, column=2, padx=10, pady=10)
 
-    # information
+    # Information
     program_info = Button(bottom, text="BİLGİ", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                           relief=RIDGE,
                           height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
     program_info.grid(row=7, column=2, padx=10, pady=10)
 
-    # exit
+    # Exit
     exit_program = Button(bottom, text="Çıkış", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                           relief=RIDGE,
                           height=2, width=35, fg="#F4F4A4", anchor="center", command=exit)

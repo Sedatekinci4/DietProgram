@@ -22,7 +22,7 @@ def add_person_ui():
         except Error as e:
             print(e)
 
-    sql_create_projects_table = """ CREATE TABLE IF NOT EXISTS users (
+    sql_create_users_table = """ CREATE TABLE IF NOT EXISTS users (
                                             name text PRIMARY KEY,
                                             surname text NOT NULL,
                                             height integer,
@@ -45,10 +45,10 @@ def add_person_ui():
         # Create a db or connect to one
         conn = sqlite3.connect("Users.db")
 
-        # create tables
+        # Create table
         if conn is not None:
-            # create projects table
-            create_table(conn, sql_create_projects_table)
+            # create users table
+            create_table(conn, sql_create_users_table)
         else:
             print("Error! cannot create the database connection.")
 
@@ -70,7 +70,7 @@ def add_person_ui():
         # Commit change
         conn.commit()
 
-        # close connection
+        # Close connection
         conn.close()
 
         # Clear the text boxes
