@@ -18,26 +18,38 @@ def home_ui():
     # Frames
     frame1 = Frame(root, width=50, height=50)
     frame1.pack()
-    frame1.place(anchor='sw', relx=0.05, rely=0.2)
+    frame1.place(anchor='sw', relx=0.03, rely=0.3)
 
     frame2 = Frame(root, width=50, height=50)
     frame2.pack()
-    frame2.place(anchor='sw', relx=0.05, rely=0.4)
+    frame2.place(anchor='sw', relx=0.05, rely=0.5)
 
     frame3 = Frame(root, width=10, height=10)
     frame3.pack()
-    frame3.place(anchor='sw', relx=0.05, rely=0.6)
-    #
-    # frame4 = Frame(root, width=50, height=50)
-    # frame4.pack()
-    # frame4.place(anchor='sw', relx=0.05, rely=0.8)
+    frame3.place(anchor='sw', relx=0.05, rely=0.7)
+
+    frame4 = Frame(root, width=50, height=50)
+    frame4.pack()
+    frame4.place(anchor='sw', relx=0.07, rely=0.9)
+
+    frame5 = Frame(root, width=50, height=50)
+    frame5.pack()
+    frame5.place(anchor='center', relx=0.85, rely=0.15)
+
+    frame6 = Frame(root, width=10, height=10)
+    frame6.pack()
+    frame6.place(anchor='center', relx=0.85, rely=0.5)
+
+    frame7 = Frame(root, width=50, height=50)
+    frame7.pack()
+    frame7.place(anchor='center', relx=0.87, rely=0.8)
 
     # Title
     label = Label(top, font=("Helvetica", "18", "bold italic"), text="---------- HOSGELDINIZ ----------", fg="#DF01A5",
                   anchor="center")
     label.grid(row=0, column=1)
 
-    img1 = ImageTk.PhotoImage(Image.open("tomatoe.jpg"))
+    img1 = ImageTk.PhotoImage(Image.open("meal3.png"))
     label1 = Label(frame1, image=img1)
     label1.pack()
 
@@ -48,10 +60,22 @@ def home_ui():
     img3 = ImageTk.PhotoImage(Image.open("meal1.png"))
     label3 = Label(frame3, image=img3)
     label3.pack()
-    #
-    # img4 = ImageTk.PhotoImage(Image.open("tomatoe.jpg"))
-    # label4 = Label(frame4, image=img4)
-    # label4.pack()
+
+    img4 = ImageTk.PhotoImage(Image.open("tomatoe.png"))
+    label4 = Label(frame4, image=img4)
+    label4.pack()
+
+    img5 = ImageTk.PhotoImage(Image.open("meal4.png"))
+    label5 = Label(frame5, image=img5)
+    label5.pack()
+
+    img6 = ImageTk.PhotoImage(Image.open("meal5.png"))
+    label6 = Label(frame6, image=img6)
+    label6.pack()
+
+    img7 = ImageTk.PhotoImage(Image.open("meal6.png"))
+    label7 = Label(frame7, image=img7)
+    label7.pack()
 
     # Buttons
     # Show person
