@@ -1,7 +1,7 @@
 from tkinter import *
 from PIL import ImageTk, Image
 import addPerson
-
+import showPerson
 
 def home_ui():
     root = Tk()
@@ -46,7 +46,7 @@ def home_ui():
     frame7.place(anchor='center', relx=0.87, rely=0.8)
 
     # Title
-    label = Label(top, font=("Helvetica", "18", "bold italic"), text="---------- HOSGELDINIZ ----------", fg="#DF01A5",
+    label = Label(top, font=("Helvetica", "25", "bold italic"), text="---------- HOSGELDINIZ ----------", fg="#DF01A5",
                   anchor="center")
     label.grid(row=0, column=1)
 
@@ -81,58 +81,58 @@ def home_ui():
 
     # Buttons
     # Show person
-    show_persons = Button(bottom, text="Kişileri Göster", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
+    show_persons = Button(bottom, text="Kişileri Göster / Düzenle", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                           relief=RIDGE,
-                          height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
-    show_persons.grid(row=0, column=2, padx=10, pady=10)
+                          height=2, width=35, fg="#F4F4A4", anchor="center", command=showPerson.person_info_ui)
+    show_persons.grid(row=0, column=2, padx=10, pady=20)
 
     # Select person
     select_person = Button(bottom, text="Kişi Seç", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                            relief=RIDGE,
                            height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
-    select_person.grid(row=1, column=2, padx=10, pady=10)
+    select_person.grid(row=1, column=2, padx=10, pady=20)
 
     # Add person
     add_person = Button(bottom, text="Kişi Ekle", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                         relief=RIDGE,
                         height=2, width=35, fg="#F4F4A4", anchor="center", command=addPerson.add_person_ui)
-    add_person.grid(row=2, column=2, padx=10, pady=10)
+    add_person.grid(row=2, column=2, padx=10, pady=20)
 
     # Edit person
-    edit_person = Button(bottom, text="Kişi Düzenle", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
-                         relief=RIDGE,
-                         height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
-    edit_person.grid(row=3, column=2, padx=10, pady=10)
+    # edit_person = Button(bottom, text="Kişi Düzenle", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
+    #                      relief=RIDGE,
+    #                      height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
+    # edit_person.grid(row=3, column=2, padx=10, pady=10)
 
     # Delete person
     delete_person = Button(bottom, text="Kişi Sil", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                            relief=RIDGE,
                            height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
-    delete_person.grid(row=4, column=2, padx=10, pady=10)
+    delete_person.grid(row=4, column=2, padx=10, pady=20)
 
     # Enter meal
     enter_meal = Button(bottom, text="Öğün Girişi Yap", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                         relief=RIDGE,
                         height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
-    enter_meal.grid(row=5, column=2, padx=10, pady=10)
+    enter_meal.grid(row=5, column=2, padx=10, pady=20)
 
     # Enter cal burnt
     cal_burned = Button(bottom, text="Yakılan Kalori Girişi Yap", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                         relief=RIDGE,
                         height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
-    cal_burned.grid(row=6, column=2, padx=10, pady=10)
+    cal_burned.grid(row=6, column=2, padx=10, pady=20)
 
     # Information
     program_info = Button(bottom, text="BİLGİ", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                           relief=RIDGE,
                           height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
-    program_info.grid(row=7, column=2, padx=10, pady=10)
+    program_info.grid(row=7, column=2, padx=10, pady=20)
 
     # Exit
     exit_program = Button(bottom, text="Çıkış", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                           relief=RIDGE,
                           height=2, width=35, fg="#F4F4A4", anchor="center", command=exit)
-    exit_program.grid(row=8, column=2, padx=10, pady=10)
+    exit_program.grid(row=8, column=2, padx=10, pady=20)
 
     root.mainloop()
 
