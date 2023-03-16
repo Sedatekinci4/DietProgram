@@ -6,7 +6,7 @@ from tkinter import messagebox
 def person_info_ui():
     root = Tk()
     root.title("Show Persons")
-    root.geometry("600x600")
+    root.geometry("650x600")
 
     def close_it():
         root.destroy()
@@ -50,7 +50,7 @@ def person_info_ui():
         weight_editor.delete(0, END)
         day_editor.delete(0, END)
 
-        messagebox.showinfo("DONE", "USERS INFO HAS BEEN UPDATED")
+        messagebox.showinfo("TAMAMLANDI", "KULLANICI BİLGİLERİ DÜZENLENDİ")
         editor.destroy()
         root.destroy()
 
@@ -111,11 +111,15 @@ def person_info_ui():
         c = conn.cursor()
 
         record_id = edit_box.get()
+        if record_id == '' or not record_id.isnumeric():
+            messagebox.showerror("HATA", "BU ID İLE BİR KULLANICI BULUNAMADI")
+            close_editor()
+            root.destroy()
         c.execute("SELECT * FROM users WHERE oid = " + record_id)
         records = c.fetchall()
         if not records:
             print("empty")
-            messagebox.showerror("Warning", "NO SUCH A USER WITH THIS OID")
+            messagebox.showerror("HATA", "BU ID İLE BİR KULLANICI BULUNAMADI")
             close_editor()
             root.destroy()
 
@@ -155,11 +159,11 @@ def person_info_ui():
         conn.close()
 
     # CREATE a query button
-    query_btn = Button(root, text="Show Records", command=query)
+    query_btn = Button(root, text="KAYITLARI GÖSTER", command=query)
     query_btn.grid(row=1, column=0, columnspan=2, pady=10, padx=10, ipadx=124)
 
     # Exit button
-    exit_button = Button(root, text="EXIT", font=('', 10), bg="#15d3ba",
+    exit_button = Button(root, text="ÇIKIŞ", font=('', 10), bg="#15d3ba",
                          relief=RIDGE,
                          height=1, width=15, fg="red", anchor="center", command=close_it)
     exit_button.grid(row=2, column=2)
@@ -169,7 +173,7 @@ def person_info_ui():
     edit_box.grid(row=2, column=0)
 
     # Edit button
-    edit_button = Button(root, text="EDIT", font=('', 10), bg="#15d3ba",
+    edit_button = Button(root, text="DÜZENLE", font=('', 10), bg="#15d3ba",
                          relief=RIDGE,
                          height=1, width=15, fg="red", anchor="center", command=edit)
     edit_button.grid(row=2, column=3, padx=5)

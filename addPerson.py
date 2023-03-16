@@ -8,7 +8,7 @@ from sqlite3 import Error
 def add_person_ui():
     root = Tk()
     root.title("Add Person")
-    root.geometry("500x500")
+    root.geometry("520x500")
 
     def create_table(conn, create_table_sql):
         """ create a table from the create_table_sql statement
@@ -36,7 +36,7 @@ def add_person_ui():
 
     def submit():
         if not f_name.get() or not l_name.get() or not height.get() or not weight.get():
-            messagebox.showwarning("Warning", "Please fill all the information")
+            messagebox.showwarning("UYARI", "LÜTFEN BİLGİLERİ EKSİKSİZ DOLDURUNUZ")
             root.destroy()
             return
 
@@ -79,7 +79,7 @@ def add_person_ui():
         height.delete(0, END)
         weight.delete(0, END)
 
-        messagebox.showinfo("information", "Check in done successfully")
+        messagebox.showinfo("BİLGİ", "KULLANICI BAŞARIYLA EKLENDİ")
         root.destroy()
 
     label = Label(root, font=("Helvetica", "18", "bold italic"), text="---------- KİŞİ EKLEYİN ----------",
@@ -108,11 +108,11 @@ def add_person_ui():
     weight_label.grid(row=5, column=0)
 
     # Create a submit button
-    submit_btn = Button(root, text="Add record to Database", command=submit)
+    submit_btn = Button(root, text="KULLANICIYI SİSTEME EKLEYİN", command=submit)
     submit_btn.grid(row=7, column=0, columnspan=2, pady=10, padx=10, ipadx=100)
 
     # Exit button
-    exit_button = Button(root, text="EXIT", font=('', 10), bg="#15d3ba",
+    exit_button = Button(root, text="ÇIKIŞ", font=('', 10), bg="#15d3ba",
                          relief=RIDGE,
                          height=1, width=15, fg="red", anchor="center", command=close_it)
     exit_button.grid(row=8, column=2, padx=10, pady=10)

@@ -40,10 +40,10 @@ def delete_user_ui():
 
                 # close connection
                 conn.close()
-                messagebox.showinfo("Success", "Successfully checked out")
+                messagebox.showinfo("BAŞARILI", "KULLANICI BAŞARIYLA SİLİNDİ")
                 root.destroy()
             else:
-                messagebox.showwarning("Warning", "No matching customers!!!")
+                messagebox.showwarning("HATA", "KULLANICI BULUNAMADI!!!")
                 # close connection
                 conn.close()
                 close_it()
@@ -81,19 +81,19 @@ def delete_user_ui():
     delete_box.grid(row=0, column=1)
 
     # Creating the box label
-    delete_box_label = Label(root, text="Delete ID")
+    delete_box_label = Label(root, text="Silinecek ID:")
     delete_box_label.grid(row=0, column=0)
 
     # CREATE a query button
-    query_btn = Button(root, text="Show OID's", command=query)
+    query_btn = Button(root, text="OID'leri Göster", command=query)
     query_btn.grid(row=5, column=0, columnspan=2, pady=10, padx=10, ipadx=124)
 
     # create a delete button
-    delete_btn = Button(root, text="Delete Record", command=delete)
+    delete_btn = Button(root, text="Kaydı Sil", command=delete)
     delete_btn.grid(row=2, column=0, columnspan=2, pady=10, padx=10, ipadx=124)
 
     # Exit button
-    exit_button = Button(root, text="EXIT", font=('', 10), bg="#15d3ba",
+    exit_button = Button(root, text="ÇIKIŞ", font=('', 10), bg="#15d3ba",
                          relief=RIDGE,
                          height=1, width=15, fg="red", anchor="center", command=close_it)
     exit_button.grid(row=4, column=3, padx=10, pady=10)
