@@ -2,6 +2,7 @@ from tkinter import *
 from PIL import ImageTk, Image
 import addPerson
 import showPerson
+import deletePerson
 
 def home_ui():
     root = Tk()
@@ -107,7 +108,7 @@ def home_ui():
     # Delete person
     delete_person = Button(bottom, text="Kişi Sil", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                            relief=RIDGE,
-                           height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
+                           height=2, width=35, fg="#F4F4A4", anchor="center", command=deletePerson.delete_user_ui)
     delete_person.grid(row=4, column=2, padx=10, pady=20)
 
     # Enter meal
