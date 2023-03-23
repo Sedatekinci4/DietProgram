@@ -3,6 +3,7 @@ from PIL import ImageTk, Image
 import addPerson
 import showPerson
 import deletePerson
+import selectPerson
 
 def home_ui():
     root = Tk()
@@ -90,7 +91,7 @@ def home_ui():
     # Select person
     select_person = Button(bottom, text="Kişi Seç", font=("Helvetica", "18", "bold italic"), bg="#6E6E6E",
                            relief=RIDGE,
-                           height=2, width=35, fg="#F4F4A4", anchor="center", command=None)
+                           height=2, width=35, fg="#F4F4A4", anchor="center", command=selectPerson.select_person_ui)
     select_person.grid(row=1, column=2, padx=10, pady=20)
 
     # Add person

@@ -10,6 +10,9 @@ def add_person_ui():
     root.title("Add Person")
     root.geometry("520x500")
 
+    gender = ["ERKEK", "KADIN"]
+
+
     def create_table(conn, create_table_sql):
         """ create a table from the create_table_sql statement
         :param conn: Connection object
@@ -27,6 +30,8 @@ def add_person_ui():
                                             surname text NOT NULL,
                                             height integer,
                                             weight float,
+                                            age integer,
+                                            gender text,
                                             day text
                                         ); """
 
@@ -96,6 +101,13 @@ def add_person_ui():
     height.grid(row=4, column=1)
     weight = Entry(root, width=40, borderwidth=10)
     weight.grid(row=5, column=1)
+    age = Entry(root, width=40, borderwidth=10)
+    age.grid(row=6, column=1)
+
+    variable_gender = StringVar(root)
+    variable_gender.set("Cinsiyet")
+    gender = OptionMenu(root, variable_gender, *gender)
+    gender.grid(row=7, column=1)
 
     # Create Box labels
     f_name_label = Label(root, text="İsim")
@@ -106,16 +118,20 @@ def add_person_ui():
     height_label.grid(row=4, column=0)
     weight_label = Label(root, text="Kilo")
     weight_label.grid(row=5, column=0)
+    age_label = Label(root, text="Yaş")
+    age_label.grid(row=6, column=0)
+    gender_label = Label(root, text="Cinsiyet")
+    gender_label.grid(row=7, column=0)
 
     # Create a submit button
     submit_btn = Button(root, text="KULLANICIYI SİSTEME EKLEYİN", command=submit)
-    submit_btn.grid(row=7, column=0, columnspan=2, pady=10, padx=10, ipadx=100)
+    submit_btn.grid(row=8, column=0, columnspan=2, pady=10, padx=10, ipadx=100)
 
     # Exit button
     exit_button = Button(root, text="ÇIKIŞ", font=('', 10), bg="#15d3ba",
                          relief=RIDGE,
                          height=1, width=15, fg="red", anchor="center", command=close_it)
-    exit_button.grid(row=8, column=2, padx=10, pady=10)
+    exit_button.grid(row=9, column=2, padx=10, pady=10)
 
     root.mainloop()
 
