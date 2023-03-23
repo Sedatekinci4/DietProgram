@@ -12,7 +12,6 @@ def add_person_ui():
 
     gender = ["ERKEK", "KADIN"]
 
-
     def create_table(conn, create_table_sql):
         """ create a table from the create_table_sql statement
         :param conn: Connection object
@@ -32,6 +31,7 @@ def add_person_ui():
                                             weight float,
                                             age integer,
                                             gender text,
+                                            cal integer,
                                             day text
                                         ); """
 
@@ -60,15 +60,35 @@ def add_person_ui():
         today = date.today()
         day_str = str(today)
 
+        print(variable_gender.get())
+        if str(variable_gender.get()) == 'ERKEK':
+            print("Oh its a boiii")
+            bmr = 66 + (13.7 * float(weight.get())) + (5 * float(height.get())) - (6.8 * float(age.get()))
+            # rmr = bmr * 1.1
+            ab = bmr * 0.1
+            eb = 600
+            cal_var = bmr + ab + eb
+        else:
+            print("ma girl ma girll")
+            bmr = 665 + (9.8 * float(weight.get())) + (1.8 * float(height.get())) - (4.7 * float(age.get()))
+            print(bmr)
+            # rmr = bmr * 1.1
+            ab = bmr * 0.1
+            eb = 600
+            cal_var = bmr + ab + eb
+
         # Create a cursor
         c = conn.cursor()
         # Insert into table
-        c.execute("INSERT INTO users VALUES (:f_name, :l_name, :height, :weight, :day)",
+        c.execute("INSERT INTO users VALUES (:f_name, :l_name, :height, :weight, :age, :gender,:cal, :day)",
                   {
                       'f_name': f_name.get(),
                       'l_name': l_name.get(),
                       'height': height.get(),
                       'weight': weight.get(),
+                      'age': age.get(),
+                      'gender': variable_gender.get(),
+                      'cal': cal_var,
                       'day': day_str
                   })
 

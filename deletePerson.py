@@ -28,9 +28,11 @@ def delete_user_ui():
 
         # Loop through records
         for record in records:
-            oids.append(str(record[5]))
+            oids.append(str(record[8]))
 
         for oid in oids:
+            print(str(oid))
+            print(str(delete_box.get()))
             if str(oid) == str(delete_box.get()):
                 print("same")
                 c.execute("DELETE from users WHERE oid=" + delete_box.get())
@@ -42,11 +44,11 @@ def delete_user_ui():
                 conn.close()
                 messagebox.showinfo("BAŞARILI", "KULLANICI BAŞARIYLA SİLİNDİ")
                 root.destroy()
-            else:
-                messagebox.showwarning("HATA", "KULLANICI BULUNAMADI!!!")
-                # close connection
-                conn.close()
-                close_it()
+
+        messagebox.showwarning("HATA", "KULLANICI BULUNAMADI!!!")
+        # close connection
+        conn.close()
+        close_it()
 
     def query():
         # Create a db or connect to one
@@ -62,8 +64,8 @@ def delete_user_ui():
         # Loop through records
         print_records = ''
         for record in records:
-            print_records += str(record[0]) + " " + str(record[1]) + " " + '\t' + str(record[5]) + "\n"
-            oids.append(str(record[5]))
+            print_records += str(record[0]) + " " + str(record[1]) + " " + '\t' + str(record[8]) + "\n"
+            oids.append(str(record[8]))
 
         print(oids)
 

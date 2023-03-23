@@ -25,6 +25,7 @@ def person_info_ui():
             surname = :last,
             height = :height,
             weight = :weight,
+            age = :age,
             day = :day
 
             WHERE oid = :oid""",
@@ -33,6 +34,7 @@ def person_info_ui():
                       'last': l_name_editor.get(),
                       'height': height_editor.get(),
                       'weight': weight_editor.get(),
+                      'age': age_editor.get(),
                       'day': day_editor.get(),
 
                       'oid': record_id
@@ -48,6 +50,7 @@ def person_info_ui():
         l_name_editor.delete(0, END)
         height_editor.delete(0, END)
         weight_editor.delete(0, END)
+        age_editor.delete(0, END)
         day_editor.delete(0, END)
 
         messagebox.showinfo("TAMAMLANDI", "KULLANICI BİLGİLERİ DÜZENLENDİ")
@@ -68,6 +71,7 @@ def person_info_ui():
         global height_editor
         global weight_editor
         global day_editor
+        global age_editor
 
         # Create tet boxes
         f_name_editor = Entry(editor, width=40, borderwidth=10)
@@ -78,8 +82,10 @@ def person_info_ui():
         height_editor.grid(row=2, column=1)
         weight_editor = Entry(editor, width=40, borderwidth=10)
         weight_editor.grid(row=3, column=1)
+        age_editor = Entry(editor, width=40, borderwidth=10)
+        age_editor.grid(row=4, column=1)
         day_editor = Entry(editor, width=40, borderwidth=10)
-        day_editor.grid(row=4, column=1)
+        day_editor.grid(row=5, column=1)
 
         # Create Box labels
         f_name_label = Label(editor, text="First Name")
@@ -90,8 +96,10 @@ def person_info_ui():
         height_label.grid(row=2, column=0)
         weight_label = Label(editor, text="Weight")
         weight_label.grid(row=3, column=0)
+        age_label = Label(editor, text="Weight")
+        age_label.grid(row=4, column=0)
         day_label = Label(editor, text="Day")
-        day_label.grid(row=4, column=0)
+        day_label.grid(row=5, column=0)
 
         # Save button
         save_button = Button(editor, text="SAVE", font=('', 10), bg="#15d3ba",
@@ -128,7 +136,8 @@ def person_info_ui():
             l_name_editor.insert(0, record[1])
             height_editor.insert(0, record[2])
             weight_editor.insert(0, record[3])
-            day_editor.insert(0, record[4])
+            age_editor.insert(0, record[4])
+            day_editor.insert(0, record[5])
 
     def query():
         # Create a db or connect to one
@@ -148,7 +157,8 @@ def person_info_ui():
                              + "Last Name:" + '\t' + str(record[1]) + '\n' \
                              + "Height:     " + '\t' + str(record[2]) + '\n' \
                              + "Weight:     " + '\t' + str(record[3]) + '\n' \
-                             + "Day:      " + '\t' + str(record[4]) + '\n' + "Oid:" + '\t' + str(record[5]) + '\n'
+                             + "Day:      " + '\t' + str(record[4]) + '\n' + "Age:" + '\t' + str(
+                record[5]) + '\n' + "Gender:" + '\t' + str(record[6]) + '\n'
         query_label = Label(root, text=print_records, anchor='center')
         query_label.grid(row=4, column=0)
 
